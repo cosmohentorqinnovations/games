@@ -25,8 +25,8 @@ html,body{width:100%;height:100%;background:#000;font-family:'Space Grotesk',san
 @keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
 
 /* ── TOP NAV ── */
-#topnav{position:fixed;top:0;left:0;right:0;z-index:150;display:flex;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(0,0,0,0);pointer-events:none;}
-#topnav.show{background:rgba(0,0,0,.6);backdrop-filter:blur(12px);pointer-events:all;}
+#topnav{position:fixed;top:0;left:0;right:0;z-index:150;display:none;align-items:center;justify-content:space-between;padding:10px 18px;background:rgba(0,0,0,.6);backdrop-filter:blur(12px);pointer-events:all;}
+#topnav.show{display:flex;}
 .tn-logo{display:flex;align-items:center;gap:8px;text-decoration:none;color:#fff;}
 .tn-logo svg{width:26px;height:26px;}
 .tn-name{font-size:.78rem;font-weight:700;letter-spacing:.12em;color:#fff;}
@@ -34,7 +34,7 @@ html,body{width:100%;height:100%;background:#000;font-family:'Space Grotesk',san
 .tn-link:hover{color:#fff;border-color:rgba(255,255,255,.35);}
 
 /* ── MENU ── */
-#menu{position:fixed;inset:0;display:none;flex-direction:column;align-items:center;background:#000;z-index:100;overflow-y:auto;overflow-x:hidden;padding:72px 16px 48px;}
+#menu{position:fixed;inset:0;display:none;flex-direction:column;align-items:center;background:#000;z-index:100;overflow-y:auto;overflow-x:hidden;padding:60px 16px 48px;}
 #menu.on{display:flex;}
 .m-hdr{text-align:center;margin-bottom:32px;}
 .m-title{font-size:clamp(1.8rem,6vw,3rem);font-weight:700;margin-top:4px;line-height:1.1;}
