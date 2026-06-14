@@ -15,8 +15,11 @@ html,body{width:100%;height:100%;background:#000;font-family:'Space Grotesk',san
 /* ── INTRO ── */
 #intro{position:fixed;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#000;z-index:200;transition:opacity .8s ease;}
 #intro.out{opacity:0;pointer-events:none;}
-.i-logo{position:relative;width:96px;height:96px;margin-bottom:22px;}
-.i-logo svg{width:96px;height:96px;}
+.i-logo{position:relative;margin-bottom:22px;}
+.i-ring-wrap{position:relative;width:110px;height:110px;display:flex;align-items:center;justify-content:center;}
+.i-ring-svg{position:absolute;inset:0;width:110px;height:110px;}
+.i-logo-img{width:64px;height:64px;object-fit:contain;position:relative;z-index:1;filter:drop-shadow(0 0 12px rgba(0,212,255,0.5));}
+.tn-logo-img{height:26px;width:auto;object-fit:contain;}
 .i-co{font-size:clamp(1rem,4vw,1.75rem);font-weight:700;letter-spacing:.15em;}
 .i-pt{font-size:clamp(.68rem,2.4vw,.95rem);letter-spacing:.32em;color:#00d4ff;text-transform:uppercase;opacity:0;animation:fiu .55s ease 1.1s forwards;}
 .i-tg{font-size:.7rem;color:rgba(255,255,255,.32);margin-top:40px;letter-spacing:.12em;opacity:0;animation:fiu .55s ease 1.7s forwards;}
@@ -99,10 +102,7 @@ html,body{width:100%;height:100%;background:#000;font-family:'Space Grotesk',san
 <!-- TOP NAV (visible on menu) -->
 <nav id="topnav">
   <a class="tn-logo" href="https://cosmohentorq.com" target="_blank" rel="noopener">
-    <svg viewBox="0 0 26 26" fill="none">
-      <circle cx="13" cy="13" r="11.5" stroke="#00d4ff" stroke-width="1.4"/>
-      <text x="13" y="17.5" text-anchor="middle" fill="#00d4ff" font-size="11" font-weight="700" font-family="Space Grotesk,sans-serif">C</text>
-    </svg>
+    <img src="logo-white.png" alt="Cosmohentorq" class="tn-logo-img">
     <span class="tn-name">COSMOHENTORQ</span>
   </a>
   <a class="tn-link" href="https://cosmohentorq.com" target="_blank" rel="noopener">Visit Main Site ↗</a>
@@ -111,21 +111,17 @@ html,body{width:100%;height:100%;background:#000;font-family:'Space Grotesk',san
 <!-- INTRO -->
 <div id="intro">
   <div class="i-logo">
-    <svg viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- Outer pulsing ring -->
-      <circle cx="48" cy="48" r="44" stroke="rgba(0,212,255,0.18)" stroke-width="1"/>
-      <!-- Main ring -->
-      <circle cx="48" cy="48" r="38" stroke="#00d4ff" stroke-width="2" stroke-dasharray="8 4" style="animation:spin 12s linear infinite;transform-origin:48px 48px"/>
-      <!-- Inner ring -->
-      <circle cx="48" cy="48" r="28" stroke="rgba(0,212,255,0.35)" stroke-width="1"/>
-      <!-- C Letter -->
-      <text x="48" y="57" text-anchor="middle" fill="#00d4ff" font-size="26" font-weight="700" font-family="Space Grotesk,sans-serif" style="text-shadow:0 0 20px rgba(0,212,255,0.9)">C</text>
-      <!-- Dots on ring -->
-      <circle cx="48" cy="10" r="3" fill="#00d4ff" opacity=".8"/>
-      <circle cx="86" cy="48" r="3" fill="#00d4ff" opacity=".8"/>
-      <circle cx="48" cy="86" r="3" fill="#00d4ff" opacity=".8"/>
-      <circle cx="10" cy="48" r="3" fill="#00d4ff" opacity=".8"/>
-    </svg>
+    <div class="i-ring-wrap">
+      <svg class="i-ring-svg" viewBox="0 0 110 110" fill="none">
+        <circle cx="55" cy="55" r="50" stroke="rgba(0,212,255,0.15)" stroke-width="1"/>
+        <circle cx="55" cy="55" r="43" stroke="#00d4ff" stroke-width="1.5" stroke-dasharray="8 5" style="animation:spin 14s linear infinite;transform-origin:55px 55px"/>
+        <circle cx="55" cy="12" r="3.5" fill="#00d4ff" opacity=".75"/>
+        <circle cx="98" cy="55" r="3.5" fill="#00d4ff" opacity=".75"/>
+        <circle cx="55" cy="98" r="3.5" fill="#00d4ff" opacity=".75"/>
+        <circle cx="12" cy="55" r="3.5" fill="#00d4ff" opacity=".75"/>
+      </svg>
+      <img src="logo-white.png" alt="Cosmohentorq" class="i-logo-img">
+    </div>
   </div>
   <div class="i-co">COSMOHENTORQ</div>
   <div class="i-pt">Playtime</div>
