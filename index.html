@@ -390,6 +390,79 @@ html,body{width:100%;height:100%;background:#000;font-family:'Space Grotesk',san
       </div>
     </div>
 
+    <!-- SUDOKU -->
+    <div class="g-card" onclick="startGame('sudoku')" style="grid-column:1/-1;">
+      <div class="g-thumb" style="height:140px;">
+        <svg viewBox="0 0 600 140" xmlns="http://www.w3.org/2000/svg">
+          <rect width="600" height="140" fill="#03040f"/>
+          <!-- Sudoku grid centered -->
+          <g transform="translate(185,8)">
+            <!-- Cell fills (some highlighted) -->
+            <rect x="1" y="1" width="124" height="40" rx="2" fill="rgba(0,212,255,0.07)"/>
+            <rect x="127" y="43" width="40" height="40" rx="1" fill="rgba(0,212,255,0.18)"/>
+            <rect x="169" y="85" width="40" height="40" rx="1" fill="rgba(0,212,255,0.09)"/>
+            <!-- Thin grid lines -->
+            <line x1="43" y1="1" x2="43" y2="127" stroke="rgba(255,255,255,0.1)" stroke-width=".7"/>
+            <line x1="85" y1="1" x2="85" y2="127" stroke="rgba(255,255,255,0.1)" stroke-width=".7"/>
+            <line x1="1" y1="43" x2="127" y2="43" stroke="rgba(255,255,255,0.1)" stroke-width=".7"/>
+            <line x1="1" y1="85" x2="127" y2="85" stroke="rgba(255,255,255,0.1)" stroke-width=".7"/>
+            <line x1="127" y1="1" x2="127" y2="127" stroke="rgba(255,255,255,0.1)" stroke-width=".7"/>
+            <line x1="169" y1="1" x2="169" y2="127" stroke="rgba(255,255,255,0.1)" stroke-width=".7"/>
+            <line x1="211" y1="1" x2="211" y2="127" stroke="rgba(255,255,255,0.1)" stroke-width=".7"/>
+            <line x1="127" y1="43" x2="253" y2="43" stroke="rgba(255,255,255,0.1)" stroke-width=".7"/>
+            <line x1="127" y1="85" x2="253" y2="85" stroke="rgba(255,255,255,0.1)" stroke-width=".7"/>
+            <!-- Box lines (thick) -->
+            <rect x="1" y="1" width="126" height="126" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+            <rect x="127" y="1" width="126" height="126" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1.5"/>
+            <line x1="43" y1="1" x2="43" y2="127" stroke="rgba(255,255,255,0.08)" stroke-width=".5"/>
+            <line x1="85" y1="1" x2="85" y2="127" stroke="rgba(255,255,255,0.08)" stroke-width=".5"/>
+            <line x1="169" y1="1" x2="169" y2="127" stroke="rgba(255,255,255,0.08)" stroke-width=".5"/>
+            <line x1="211" y1="1" x2="211" y2="127" stroke="rgba(255,255,255,0.08)" stroke-width=".5"/>
+            <line x1="1" y1="43" x2="253" y2="43" stroke="rgba(255,255,255,0.08)" stroke-width=".5"/>
+            <line x1="1" y1="85" x2="253" y2="85" stroke="rgba(255,255,255,0.08)" stroke-width=".5"/>
+            <!-- Box borders -->
+            <rect x="1" y="1" width="126" height="126" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
+            <rect x="127" y="1" width="126" height="126" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2"/>
+            <!-- Numbers (white = given, cyan = filled) -->
+            <text x="22" y="30" text-anchor="middle" fill="white" font-size="20" font-weight="700" font-family="Space Grotesk,sans-serif">5</text>
+            <text x="64" y="30" text-anchor="middle" fill="white" font-size="20" font-weight="700" font-family="Space Grotesk,sans-serif">3</text>
+            <text x="22" y="72" text-anchor="middle" fill="white" font-size="20" font-weight="700" font-family="Space Grotesk,sans-serif">6</text>
+            <text x="106" y="72" text-anchor="middle" fill="white" font-size="20" font-weight="700" font-family="Space Grotesk,sans-serif">9</text>
+            <text x="22" y="114" text-anchor="middle" fill="white" font-size="20" font-weight="700" font-family="Space Grotesk,sans-serif">8</text>
+            <text x="64" y="114" text-anchor="middle" fill="white" font-size="20" font-weight="700" font-family="Space Grotesk,sans-serif">1</text>
+            <text x="148" y="30" text-anchor="middle" fill="#00d4ff" font-size="20" font-weight="600" font-family="Space Grotesk,sans-serif">7</text>
+            <text x="148" y="72" text-anchor="middle" fill="#00d4ff" font-size="20" font-weight="600" font-family="Space Grotesk,sans-serif">4</text>
+            <text x="190" y="30" text-anchor="middle" fill="white" font-size="20" font-weight="700" font-family="Space Grotesk,sans-serif">6</text>
+            <text x="232" y="72" text-anchor="middle" fill="white" font-size="20" font-weight="700" font-family="Space Grotesk,sans-serif">2</text>
+            <text x="190" y="114" text-anchor="middle" fill="#00d4ff" font-size="20" font-weight="600" font-family="Space Grotesk,sans-serif">9</text>
+          </g>
+          <!-- Right side label -->
+          <text x="440" y="44" text-anchor="middle" fill="white" font-size="22" font-weight="700" font-family="Space Grotesk,sans-serif">Daily</text>
+          <text x="440" y="70" text-anchor="middle" fill="#00d4ff" font-size="22" font-weight="700" font-family="Space Grotesk,sans-serif">Puzzle</text>
+          <text x="440" y="96" text-anchor="middle" fill="rgba(255,255,255,0.35)" font-size="12" font-family="Space Grotesk,sans-serif">Changes every day</text>
+          <!-- Difficulty badges -->
+          <rect x="330" y="108" width="52" height="22" rx="5" fill="rgba(68,221,136,0.15)" stroke="rgba(68,221,136,0.4)" stroke-width="1"/>
+          <text x="356" y="124" text-anchor="middle" fill="#44dd88" font-size="10" font-weight="600" font-family="Space Grotesk,sans-serif">EASY</text>
+          <rect x="390" y="108" width="62" height="22" rx="5" fill="rgba(255,204,68,0.15)" stroke="rgba(255,204,68,0.4)" stroke-width="1"/>
+          <text x="421" y="124" text-anchor="middle" fill="#ffcc44" font-size="10" font-weight="600" font-family="Space Grotesk,sans-serif">MEDIUM</text>
+          <rect x="460" y="108" width="52" height="22" rx="5" fill="rgba(255,102,68,0.15)" stroke="rgba(255,102,68,0.4)" stroke-width="1"/>
+          <text x="486" y="124" text-anchor="middle" fill="#ff6644" font-size="10" font-weight="600" font-family="Space Grotesk,sans-serif">HARD</text>
+        </svg>
+      </div>
+      <div class="g-body">
+        <div class="g-name">Sudoku &nbsp;<span style="font-size:.7rem;color:#00d4ff;font-weight:500;letter-spacing:.08em;">DAILY PUZZLE</span></div>
+        <div class="g-desc">A new puzzle every day. Three difficulty levels. Race the clock and beat your personal best.</div>
+        <div class="g-foot">
+          <div>
+            <div class="g-hs" id="hs-sudoku-easy" style="margin-bottom:2px">Easy: —</div>
+            <div class="g-hs" id="hs-sudoku-medium" style="margin-bottom:2px">Medium: —</div>
+            <div class="g-hs" id="hs-sudoku-hard">Hard: —</div>
+          </div>
+          <button class="g-play">PLAY →</button>
+        </div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -498,6 +571,15 @@ document.addEventListener('keydown',e=>{
   keys[e.code]=true;
   if(e.code==='Space')e.preventDefault();
   if((e.code==='KeyP'||e.code==='Escape')&&(G.running||G.paused)) G.paused?G.resume():G.pause();
+  if(G.game&&G.game.placeNumber){
+    const d=e.code.match(/^(?:Digit|Numpad)([1-9])$/);if(d){G.game.placeNumber(+d[1]);e.preventDefault();}
+    if(e.code==='Backspace'||e.code==='Delete'){G.game.placeNumber(0);e.preventDefault();}
+    if(e.code==='KeyN'&&G.game.notesMode!=null){G.game.notesMode=!G.game.notesMode;}
+    if(e.code==='ArrowLeft'&&G.game.selected){G.game.selected.c=Math.max(0,G.game.selected.c-1);e.preventDefault();}
+    if(e.code==='ArrowRight'&&G.game.selected){G.game.selected.c=Math.min(8,G.game.selected.c+1);e.preventDefault();}
+    if(e.code==='ArrowUp'&&G.game.selected){G.game.selected.r=Math.max(0,G.game.selected.r-1);e.preventDefault();}
+    if(e.code==='ArrowDown'&&G.game.selected){G.game.selected.r=Math.min(8,G.game.selected.r+1);e.preventDefault();}
+  }
 });
 document.addEventListener('keyup',e=>keys[e.code]=false);
 
@@ -524,7 +606,7 @@ function rr(cx,x,y,w,h,r){cx.beginPath();cx.moveTo(x+r,y);cx.lineTo(x+w-r,y);cx.
 /* ══ GAME MANAGER ══════════════════════════════════════════════ */
 const G={
   game:null,id:null,running:false,paused:false,raf:null,lt:0,
-  names:{shooter:'Space Shooter',snake:'Neon Snake',asteroids:'Asteroid Dodge',breakout:'Brick Breaker',carrace:'Car Race'},
+  names:{shooter:'Space Shooter',snake:'Neon Snake',asteroids:'Asteroid Dodge',breakout:'Brick Breaker',carrace:'Car Race',sudoku:'Sudoku'},
   start(id){
     SFX.click();this.id=id;
     document.getElementById('menu').classList.remove('on');
@@ -534,7 +616,7 @@ const G={
     this.buildTouch(id);
     this.game=this.create(id);this.game.init();this.loop();
   },
-  create(id){switch(id){case'shooter':return new SpaceShooter();case'snake':return new NeonSnake();case'asteroids':return new AsteroidDodge();case'breakout':return new BrickBreaker();case'carrace':return new CarRace();}},
+  create(id){switch(id){case'shooter':return new SpaceShooter();case'snake':return new NeonSnake();case'asteroids':return new AsteroidDodge();case'breakout':return new BrickBreaker();case'carrace':return new CarRace();case'sudoku':return new SudokuGame();}},
   loop(){
     cancelAnimationFrame(this.raf);this.running=true;this.paused=false;this.lt=performance.now();
     const tick=t=>{if(!this.running||this.paused)return;const dt=Math.min((t-this.lt)/1000,.05);this.lt=t;this.game.update(dt);this.game.draw(cx,W,H);this.updateHUD();this.raf=requestAnimationFrame(tick);};
@@ -542,8 +624,8 @@ const G={
   },
   updateHUD(){
     const gm=this.game;
-    document.getElementById('hud-sc').textContent=gm.score.toLocaleString();
-    document.getElementById('hud-bs').textContent=HS.fmt(this.id);
+    if(this.id==='sudoku'&&gm.fmtTime){document.getElementById('hud-sc').textContent=gm.fmtTime(gm.timer||0);document.getElementById('hud-bs').textContent='';}
+    else{document.getElementById('hud-sc').textContent=gm.score.toLocaleString();document.getElementById('hud-bs').textContent=HS.fmt(this.id);}
     const lv=document.getElementById('hud-lv');lv.innerHTML='';
     if(gm.maxLives){for(let i=0;i<gm.maxLives;i++){const d=document.createElement('div');d.className='h-li'+(i>=gm.lives?' d':'');lv.appendChild(d);}}
   },
@@ -573,11 +655,14 @@ const G={
     document.getElementById('go-hs').textContent='Best: '+HS.get(this.id).toLocaleString();
     document.getElementById('ov-go').classList.add('on');
   },
-  updateMenuHS(){['shooter','snake','asteroids','breakout','carrace'].forEach(id=>document.getElementById('hs-'+id).textContent='Best: '+HS.fmt(id));},
+  updateMenuHS(){
+    ['shooter','snake','asteroids','breakout','carrace'].forEach(id=>{const el=document.getElementById('hs-'+id);if(el)el.textContent='Best: '+HS.fmt(id);});
+    ['easy','medium','hard'].forEach(d=>{const el=document.getElementById('hs-sudoku-'+d);if(!el)return;const v=parseInt(localStorage.getItem('cq_sudoku_'+d)||'0');const m=Math.floor(v/60),s=v%60;el.textContent=(d[0].toUpperCase()+d.slice(1))+': '+(v?m+':'+(s<10?'0':'')+s:'—');});
+  },
   buildTouch(id){
     const tc=document.getElementById('tc');tc.innerHTML='';
     const isMobile=window.innerWidth<900||'ontouchstart' in window;
-    if(!isMobile)return;
+    if(!isMobile||id==='sudoku')return;
     tc.classList.add('on');
     if(id==='snake'){
       tc.style.justifyContent='center';
@@ -635,6 +720,10 @@ const G={
 document.getElementById('btn-p').onclick=()=>G.paused?G.resume():G.pause();
 document.getElementById('btn-r').onclick=()=>G.reset();
 document.getElementById('btn-m').onclick=()=>G.menu();
+
+/* Canvas click/touch → Sudoku handleClick */
+cv.addEventListener('click',e=>{if(G.game&&G.game.handleClick){const r=cv.getBoundingClientRect();G.game.handleClick(e.clientX-r.left,e.clientY-r.top);}});
+cv.addEventListener('touchend',e=>{if(G.game&&G.game.handleClick){e.preventDefault();const r=cv.getBoundingClientRect(),t=e.changedTouches[0];G.game.handleClick(t.clientX-r.left,t.clientY-r.top);}},{passive:false});
 
 /* ══ SPACE SHOOTER ══════════════════════════════════════════════ */
 class SpaceShooter{
@@ -899,6 +988,225 @@ class CarRace{
     }
     cx.fillStyle='rgba(255,255,255,.32)';cx.font='500 12px Space Grotesk,sans-serif';cx.textAlign='center';
     cx.fillText(`${this.score}m  ·  ${Math.floor(this.speed*2)} km/h`,W/2,H-12);
+  }
+}
+
+/* ══ SEEDED RNG ═════════════════════════════════════════════════ */
+class RNG{
+  constructor(seed){this.s=seed>>>0;}
+  next(){this.s=(Math.imul(this.s,1664525)+1013904223)>>>0;return this.s/4294967296;}
+  int(n){return Math.floor(this.next()*n);}
+  shuffle(arr){for(let i=arr.length-1;i>0;i--){const j=this.int(i+1);[arr[i],arr[j]]=[arr[j],arr[i]];}return arr;}
+}
+
+/* ══ SUDOKU ══════════════════════════════════════════════════════ */
+class SudokuGame{
+  init(){
+    this.score=0;this.lives=3;this.maxLives=3;
+    this.screen='pick';this.diff='easy';this.timer=0;this.mistakes=0;
+    this.selected=null;this.notesMode=false;this.board=null;this.solution=null;
+    this.didWin=false;this.winTime=0;this.winIsNew=false;this.pts=[];
+  }
+  fmtTime(s){s=Math.round(s);const m=Math.floor(s/60),ss=s%60;return m+':'+(ss<10?'0':'')+ss;}
+  dateSeed(d){
+    const t=new Date(),str=`${t.getFullYear()}${t.getMonth()}${t.getDate()}${d}`;
+    let h=0;for(let i=0;i<str.length;i++)h=(Math.imul(31,h)+str.charCodeAt(i))|0;return h>>>0;
+  }
+  isValid(b,r,c,n){
+    for(let i=0;i<9;i++){if(b[r][i]===n||b[i][c]===n)return false;}
+    const br=Math.floor(r/3)*3,bc=Math.floor(c/3)*3;
+    for(let dr=0;dr<3;dr++)for(let dc=0;dc<3;dc++)if(b[br+dr][bc+dc]===n)return false;
+    return true;
+  }
+  solve(b){
+    for(let r=0;r<9;r++)for(let c=0;c<9;c++){
+      if(b[r][c]===0){
+        for(let n=1;n<=9;n++){if(this.isValid(b,r,c,n)){b[r][c]=n;if(this.solve(b))return true;b[r][c]=0;}}
+        return false;
+      }
+    }
+    return true;
+  }
+  newPuzzle(diff){
+    const rng=new RNG(this.dateSeed(diff));
+    const sol=Array.from({length:9},()=>Array(9).fill(0));
+    for(let b=0;b<9;b+=3){const nums=rng.shuffle([1,2,3,4,5,6,7,8,9]);let k=0;for(let r=b;r<b+3;r++)for(let c=b;c<b+3;c++)sol[r][c]=nums[k++];}
+    this.solve(sol);
+    this.solution=sol.map(r=>[...r]);
+    const remove={easy:40,medium:50,hard:56}[diff];
+    const puzzle=sol.map(row=>row.map(v=>({val:v,given:true,notes:new Set(),wrong:false})));
+    const cells=[];for(let r=0;r<9;r++)for(let c=0;c<9;c++)cells.push([r,c]);
+    rng.shuffle(cells);for(let i=0;i<remove;i++){const[r,c]=cells[i];puzzle[r][c].val=0;puzzle[r][c].given=false;}
+    this.board=puzzle;this.diff=diff;this.timer=0;this.mistakes=0;this.lives=3;this.maxLives=3;
+    this.selected=null;this.notesMode=false;this.screen='game';this.score=0;this.pts=[];
+  }
+  update(dt){
+    if(this.screen==='game'){this.timer+=dt;this.score=Math.round(this.timer);}
+    if(this.pts.length)this.pts=this.pts.filter(p=>p.update(dt));
+  }
+  onResize(){}
+  layout(){
+    const maxGW=Math.min(W*0.92,(H-210)*0.95,450);
+    const cs=Math.floor(maxGW/9),gw=cs*9,gx=Math.round((W-gw)/2),gy=58;
+    const padY=gy+gw+16,padCW=Math.floor(gw/10),padBH=Math.round(cs*0.88);
+    return{cs,gw,gx,gy,padY,padCW,padBH};
+  }
+  handleClick(x,y){
+    if(this.screen==='pick'){this.handlePickClick(x,y);return;}
+    if(this.screen==='done'){this.handleDoneClick(x,y);return;}
+    const{cs,gx,gy,padY,padCW,padBH,gw}=this.layout();
+    // Grid
+    if(x>=gx&&x<gx+gw&&y>=gy&&y<gy+gw){
+      const c=Math.floor((x-gx)/cs),r=Math.floor((y-gy)/cs);
+      if(r>=0&&r<9&&c>=0&&c<9){this.selected={r,c};SFX.click();}
+      return;
+    }
+    // Number pad
+    if(y>=padY&&y<padY+padBH){
+      for(let i=0;i<9;i++){const bx=gx+i*padCW;if(x>=bx&&x<bx+padCW-2){this.placeNumber(i+1);return;}}
+      if(x>=gx+9*padCW&&x<gx+gw){this.placeNumber(0);return;}
+    }
+    // Notes toggle
+    const notesH=Math.round(cs*0.72),notesW=Math.round(cs*1.6);
+    const notesX=gx+gw-notesW,notesY=padY+padBH+8;
+    if(y>=notesY&&y<notesY+notesH&&x>=notesX&&x<notesX+notesW){this.notesMode=!this.notesMode;SFX.click();}
+  }
+  handlePickClick(x,y){
+    const bw=Math.min(220,W*0.55),bh=54,gap=16,totalH=3*bh+2*gap;
+    const by0=H/2-totalH/2+20,bx=(W-bw)/2;
+    ['easy','medium','hard'].forEach((d,i)=>{const by=by0+i*(bh+gap);if(x>=bx&&x<=bx+bw&&y>=by&&y<=by+bh){SFX.level();this.newPuzzle(d);}});
+  }
+  handleDoneClick(x,y){
+    const bw=Math.min(220,W*0.55),bh=52,bx=(W-bw)/2,by=H/2+50;
+    if(x>=bx&&x<=bx+bw&&y>=by&&y<=by+bh){SFX.click();this.screen='pick';}
+  }
+  placeNumber(num){
+    if(!this.selected)return;
+    const{r,c}=this.selected,cell=this.board[r][c];
+    if(cell.given)return;
+    if(num===0){cell.val=0;cell.notes.clear();cell.wrong=false;SFX.click();return;}
+    if(this.notesMode){if(cell.val!==0)return;cell.notes.has(num)?cell.notes.delete(num):cell.notes.add(num);SFX.click();return;}
+    cell.notes.clear();
+    if(num===this.solution[r][c]){
+      cell.val=num;cell.wrong=false;SFX.shoot();
+      const{cs,gx,gy}=this.layout();burst(this.pts,gx+c*cs+cs/2,gy+r*cs+cs/2,'#00d4ff',8,2);
+      const br=Math.floor(r/3)*3,bc=Math.floor(c/3)*3;
+      for(let i=0;i<9;i++){this.board[r][i].notes.delete(num);this.board[i][c].notes.delete(num);}
+      for(let dr=0;dr<3;dr++)for(let dc=0;dc<3;dc++)this.board[br+dr][bc+dc].notes.delete(num);
+      this.checkWin();
+    }else{
+      cell.val=num;cell.wrong=true;this.mistakes++;this.lives=Math.max(0,3-this.mistakes);SFX.boom();
+      if(this.mistakes>=3){this.didWin=false;this.screen='done';burst(this.pts,W/2,H/3,'#ff5044',30,5);}
+    }
+  }
+  checkWin(){
+    for(let r=0;r<9;r++)for(let c=0;c<9;c++)if(this.board[r][c].val!==this.solution[r][c])return;
+    SFX.level();
+    const key='cq_sudoku_'+this.diff,prev=parseInt(localStorage.getItem(key)||'999999');
+    const isNew=this.timer<prev;if(isNew)localStorage.setItem(key,Math.round(this.timer));
+    this.winTime=this.timer;this.winIsNew=isNew;this.didWin=true;this.screen='done';
+    burst(this.pts,W/2,H/2,'#00d4ff',30,5);
+  }
+  draw(cx,W,H){
+    cx.fillStyle='#03040f';cx.fillRect(0,0,W,H);
+    cx.save();
+    if(this.screen==='pick')this.drawPicker(cx,W,H);
+    else if(this.screen==='done')this.drawDone(cx,W,H);
+    else this.drawGame(cx,W,H);
+    cx.restore();
+    if(this.pts.length){this.pts.forEach(p=>p.draw(cx));cx.globalAlpha=1;}
+  }
+  drawPicker(cx,W,H){
+    cx.textAlign='center';cx.textBaseline='middle';
+    cx.fillStyle='#fff';cx.font=`bold ${Math.min(30,W*.065)}px "Space Grotesk",sans-serif`;
+    cx.fillText('Daily Sudoku',W/2,H/2-130);
+    cx.fillStyle='rgba(255,255,255,.38)';cx.font=`${Math.min(13,W*.032)}px "Space Grotesk",sans-serif`;
+    const d=new Date();cx.fillText(d.toDateString()+' · New puzzle tomorrow',W/2,H/2-96);
+    const bw=Math.min(220,W*.55),bh=54,gap=16,by0=H/2-( 3*bh+2*gap)/2+20,bx=W/2-bw/2;
+    const cfgs=[{d:'easy',lbl:'EASY',col:'#44dd88'},{d:'medium',lbl:'MEDIUM',col:'#ffcc44'},{d:'hard',lbl:'HARD',col:'#ff6644'}];
+    cfgs.forEach((cfg,i)=>{
+      const by=by0+i*(bh+gap);
+      cx.shadowColor=cfg.col+'44';cx.shadowBlur=16;cx.strokeStyle=cfg.col;cx.lineWidth=1.5;cx.strokeRect(bx+.5,by+.5,bw-1,bh-1);
+      cx.shadowBlur=0;cx.fillStyle=cfg.col+'15';cx.fillRect(bx,by,bw,bh);
+      cx.fillStyle=cfg.col;cx.font=`bold ${Math.min(17,W*.042)}px "Space Grotesk",sans-serif`;cx.fillText(cfg.lbl,W/2,by+bh/2);
+      const v=parseInt(localStorage.getItem('cq_sudoku_'+cfg.d)||'0');
+      if(v){cx.fillStyle='rgba(255,255,255,.35)';cx.font=`${Math.min(10,W*.025)}px "Space Grotesk",sans-serif`;cx.fillText('Best: '+this.fmtTime(v),W/2,by+bh+9);}
+    });
+  }
+  drawDone(cx,W,H){
+    cx.fillStyle='rgba(3,4,15,.88)';cx.fillRect(0,0,W,H);
+    cx.textAlign='center';cx.textBaseline='middle';
+    if(this.didWin){
+      cx.fillStyle='#00d4ff';cx.font=`bold ${Math.min(32,W*.072)}px "Space Grotesk",sans-serif`;cx.fillText('Puzzle Complete!',W/2,H/2-85);
+      cx.fillStyle='#fff';cx.font=`${Math.min(20,W*.05)}px "Space Grotesk",sans-serif`;cx.fillText('Time: '+this.fmtTime(this.winTime),W/2,H/2-44);
+      if(this.winIsNew){cx.fillStyle='#ffcc44';cx.font=`bold ${Math.min(15,W*.038)}px "Space Grotesk",sans-serif`;cx.fillText('★ New Personal Best!',W/2,H/2-10);}
+    }else{
+      cx.fillStyle='#ff5044';cx.font=`bold ${Math.min(28,W*.065)}px "Space Grotesk",sans-serif`;cx.fillText('Too Many Mistakes!',W/2,H/2-80);
+      cx.fillStyle='rgba(255,255,255,.45)';cx.font=`${Math.min(13,W*.033)}px "Space Grotesk",sans-serif`;cx.fillText('The daily puzzle resets tomorrow',W/2,H/2-44);
+    }
+    const bw=Math.min(220,W*.55),bh=52,bx=W/2-bw/2,by=H/2+50;
+    cx.strokeStyle='#00d4ff';cx.lineWidth=1.5;cx.strokeRect(bx,by,bw,bh);
+    cx.fillStyle='rgba(0,212,255,.12)';cx.fillRect(bx,by,bw,bh);
+    cx.fillStyle='#fff';cx.font=`bold ${Math.min(14,W*.036)}px "Space Grotesk",sans-serif`;cx.fillText('Try Another Difficulty',W/2,by+bh/2);
+  }
+  drawGame(cx,W,H){
+    const{cs,gx,gy,padY,padCW,padBH,gw}=this.layout();
+    const sel=this.selected,sval=sel?this.board[sel.r][sel.c].val:0;
+    // Cells
+    for(let r=0;r<9;r++)for(let c=0;c<9;c++){
+      const cell=this.board[r][c],x0=gx+c*cs,y0=gy+r*cs;
+      let bg=null;
+      if(sel&&sel.r===r&&sel.c===c)bg='rgba(0,212,255,.22)';
+      else if(cell.wrong)bg='rgba(255,80,60,.2)';
+      else if(sel&&(sel.r===r||sel.c===c))bg='rgba(0,212,255,.065)';
+      else if(sel&&Math.floor(sel.r/3)===Math.floor(r/3)&&Math.floor(sel.c/3)===Math.floor(c/3))bg='rgba(0,212,255,.04)';
+      else if(sval&&cell.val===sval)bg='rgba(0,212,255,.13)';
+      if(bg){cx.fillStyle=bg;cx.fillRect(x0+1,y0+1,cs-2,cs-2);}
+      if(cell.val!==0){
+        cx.textAlign='center';cx.textBaseline='middle';
+        cx.fillStyle=cell.wrong?'#ff5044':cell.given?'#ffffff':'#00d4ff';
+        cx.font=`${cell.given?700:500} ${Math.round(cs*.54)}px "Space Grotesk",sans-serif`;
+        cx.fillText(cell.val,x0+cs/2,y0+cs/2);
+      }else if(cell.notes.size>0){
+        cx.fillStyle='rgba(0,212,255,.6)';cx.textAlign='center';cx.textBaseline='middle';
+        const nsz=cs/3;cx.font=`${Math.max(7,Math.round(nsz*.58))}px "Space Grotesk",sans-serif`;
+        for(let n=1;n<=9;n++){if(!cell.notes.has(n))continue;const nr=Math.floor((n-1)/3),nc=(n-1)%3;cx.fillText(n,x0+nc*nsz+nsz/2,y0+nr*nsz+nsz/2);}
+      }
+    }
+    // Grid lines
+    for(let i=0;i<=9;i++){
+      const box=i%3===0;cx.strokeStyle=box?'rgba(255,255,255,.5)':'rgba(255,255,255,.11)';cx.lineWidth=box?1.8:.6;
+      cx.beginPath();cx.moveTo(gx+i*cs,gy);cx.lineTo(gx+i*cs,gy+gw);cx.stroke();
+      cx.beginPath();cx.moveTo(gx,gy+i*cs);cx.lineTo(gx+gw,gy+i*cs);cx.stroke();
+    }
+    // Info row
+    cx.textAlign='left';cx.textBaseline='alphabetic';
+    cx.fillStyle='rgba(255,255,255,.8)';cx.font=`${Math.min(14,W*.035)}px "Space Grotesk",sans-serif`;
+    cx.fillText(this.fmtTime(this.timer),gx,gy-8);
+    cx.textAlign='right';
+    cx.fillStyle={easy:'#44dd88',medium:'#ffcc44',hard:'#ff6644'}[this.diff];
+    cx.font=`bold ${Math.min(11,W*.028)}px "Space Grotesk",sans-serif`;
+    cx.fillText({easy:'EASY',medium:'MEDIUM',hard:'HARD'}[this.diff],gx+gw,gy-8);
+    // Number pad
+    for(let i=0;i<9;i++){
+      const bx=gx+i*padCW;
+      cx.strokeStyle='rgba(0,212,255,.3)';cx.lineWidth=1;cx.strokeRect(bx,padY,padCW-2,padBH);
+      cx.fillStyle='rgba(0,212,255,.06)';cx.fillRect(bx,padY,padCW-2,padBH);
+      cx.fillStyle='#fff';cx.font=`bold ${Math.round(cs*.42)}px "Space Grotesk",sans-serif`;
+      cx.textAlign='center';cx.textBaseline='middle';cx.fillText(i+1,bx+(padCW-2)/2,padY+padBH/2);
+    }
+    const ex=gx+9*padCW,ew=gw-9*padCW;
+    cx.strokeStyle='rgba(255,100,68,.4)';cx.lineWidth=1;cx.strokeRect(ex,padY,ew,padBH);
+    cx.fillStyle='rgba(255,100,68,.07)';cx.fillRect(ex,padY,ew,padBH);
+    cx.fillStyle='#ff6644';cx.font=`${Math.round(cs*.36)}px "Space Grotesk",sans-serif`;
+    cx.textAlign='center';cx.textBaseline='middle';cx.fillText('⌫',ex+ew/2,padY+padBH/2);
+    // Notes toggle
+    const nH=Math.round(cs*.72),nW=Math.round(cs*1.6),nX=gx+gw-nW,nY=padY+padBH+8;
+    cx.strokeStyle=this.notesMode?'#00d4ff':'rgba(255,255,255,.2)';cx.lineWidth=1;cx.strokeRect(nX,nY,nW,nH);
+    cx.fillStyle=this.notesMode?'rgba(0,212,255,.15)':'rgba(255,255,255,.03)';cx.fillRect(nX,nY,nW,nH);
+    cx.fillStyle=this.notesMode?'#00d4ff':'rgba(255,255,255,.4)';
+    cx.font=`${Math.round(cs*.27)}px "Space Grotesk",sans-serif`;cx.textAlign='center';cx.textBaseline='middle';
+    cx.fillText('NOTES '+(this.notesMode?'ON':'OFF'),nX+nW/2,nY+nH/2);
   }
 }
 
